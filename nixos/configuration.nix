@@ -7,7 +7,6 @@
         ./hardware-configuration.nix
         ./users.nix
         #./conf.d/~.nix where ~ can be either server or desktop
-        ./flake.nix
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
