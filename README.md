@@ -1,5 +1,5 @@
 # conf.nix
-My ultimate nixos configuration (stil it testing)
+My ultimate nixos configuration (still it testing)!!
 
 # How to pull
 (must be executed as `root`)
