@@ -49,4 +49,12 @@ and please don't just open issue and disappears. xd
 ### P.S
  * i will ingore **ANY** issue what won't be properly created (from now, even mine).
 
-
+# Offtop
+### Why did you put everything in `nixos` folder?
+ - inmho, this way you wont harm your `configuration.nix` while you editing mine. also this way i'm kinda preventing you from not backing up your working config.
+### Is there any point of this whole project existing?
+ - yes, and main one - to make my life easier. i have [multiple devices](https://pastebin.com/raw/kRSBxh3W) laying around, and much more PCs in my colledge. and writing `configuration.nix` every time i have need it is pain in butt. also, by creating this project, i've done my first big project with bugtracking, fixes and etc. this was my goal on 2024, so i hope i will work with this later on. xd
+### Is it created for **FULL Reproducibility**?
+ - no. i have no need in full reproducibility, bc most of my cases (right now) is create a machine that will work no matter what OS will be on it. with nixos i can achieve it with ease.
+### I want to help you, but don't know how!
+ - it's awesome! if you have any ideas how to improve (and not ruin my goals, read whole offtop again pls) this project - message me in matrix / discord / telegram! links in my bio.
