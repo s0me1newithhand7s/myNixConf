@@ -4,7 +4,7 @@ My ultimate nixos configuration (still it testing)!!
 # How to pull
 (must be executed as `root`)
 
-### firtly:
+### firstly:
 add **nix unstable channel**:
 ```shell
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixos
