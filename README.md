@@ -9,6 +9,7 @@ add **nix unstable channel**:
 ```shell
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixos
 ```
+this is (IMHO) THE best nixos and nix channel. feel free to not to do this step.
 ### senodly:
 ```shell
 git clone https://github.com/s0me1newithhand7s/conf.nix
