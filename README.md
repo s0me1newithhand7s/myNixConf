@@ -1,4 +1,4 @@
-# conf.nix
+# myNixConf
 My ultimate nixos configuration (still it testing)!!
 
 # How to pull
