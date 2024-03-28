@@ -6,7 +6,8 @@
     imports = [
         ./hardware-configuration.nix
         ./users.nix
-        #./conf.d/~.nix where ~ can be either server or desktop
+        #./conf.d/desktop.nix
+        #./conf.d/server.nix
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
