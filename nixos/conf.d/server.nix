@@ -16,9 +16,14 @@
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
     # networking.firewall.enable = enable;
     # networking.firewall.allowedTCPPorts = [ ... ];
-    # networking.firewall.allowedTCPPortRanges = { ... };
+    # networking.firewall.allowedTCPPortRanges = [ 
+    #    { from = ...; to = ...; }
+    # ];
     # networking.firewall.allowedUDPPorts = [ ... ];   
-    # networking.firewall.allowedUDPPortRanges = { ... };
+    # networking.firewall.allowedUDPPortRanges = [ 
+    #    { from = ...; to = ...; }
+    # ];
+    networking.firewall.allowping = true;
     time.timeZone = "Europe/Moscow";
 
 
