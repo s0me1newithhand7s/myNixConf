@@ -51,7 +51,7 @@ and please don't just open issue and disappears. xd
 
 # Offtop
 ### Why did you put everything in `nixos` folder?
- - inmho, this way you wont harm your `configuration.nix` while you editing mine. also this way i'm kinda preventing you from not backing up your working config.
+ - imho, this way you wont harm your `configuration.nix` while you editing mine. also this way i'm kinda preventing you from not backing up your working config.
 ### Is there any point of this whole project existing?
  - yes, and main one - to make my life easier. i have [multiple devices](https://pastebin.com/raw/kRSBxh3W) laying around, and much more PCs in my colledge. and writing `configuration.nix` every time i have need it is pain in butt. also, by creating this project, i've done my first big project with bugtracking, fixes and etc. this was my goal on 2024, so i hope i will work with this later on. xd
 ### Is it created for **FULL Reproducibility**?
