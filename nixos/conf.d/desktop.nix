@@ -6,8 +6,6 @@
     imports = [
         # ./desktop.d/de.nix
         # ./desktop.d/wm.nix
-        # ./desktop.d/amd.nix
-        # ./desktop.d/nvidia.nix
     ];
 
 
