@@ -1,7 +1,7 @@
 # myNixConf
 My ultimate nixos configuration (still it testing)!!
 
-# How to pull
+# How to clone
 (must be executed as `root`)
 
 ### firstly:
