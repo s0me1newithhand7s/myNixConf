@@ -1,4 +1,4 @@
-# Config for (my) server
+# Config for server
 
 { config, lib, pkgs, ... }:
 
@@ -9,21 +9,40 @@
     ];
 
     # Networking
-    networking.hostName = "s0meserv1-nix";
-    networking.wireless.enable = false;
-    networking.networkmanager.enable = true;
-    # networking.proxy.default = "http://user:password@proxy:port/";
-    # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-    # networking.firewall.enable = enable;
-    # networking.firewall.allowedTCPPorts = [ ... ];
-    # networking.firewall.allowedTCPPortRanges = [ 
-    #    { from = ...; to = ...; }
-    # ];
-    # networking.firewall.allowedUDPPorts = [ ... ];   
-    # networking.firewall.allowedUDPPortRanges = [ 
-    #    { from = ...; to = ...; }
-    # ];
-    networking.firewall.allowping = true;
+    networking = {
+        # bonds = ;
+        # bridges = ;
+        firewall = { 
+            allowping = true;
+            # allowedTCPPorts = [ ... ];
+            # allowedTCPPortRanges = [ 
+                # { from = ...; to = ...; }
+            # ];
+            # allowedUDPPorts = [ ... ]; 
+            # allowedUDPPortRanges = [ 
+                # { from = ...; to = ...; }
+            # ];
+            enable = enable;
+        };
+        hostName = "s0meserv1-nix";
+        networkmanager = {
+            enable = true;
+        };
+        # proxy = {
+            # allProxy = ;
+            # default = ;
+            # ftpProxy = ;
+            # httpProxy = ;
+            # httpsProxy = ;
+            # noProxy = ;
+            # rsyncProxy = ;
+
+        # };
+        wireless = {
+            enable = false;
+        };
+    };  
+    
     time.timeZone = "Europe/Moscow";
 
 

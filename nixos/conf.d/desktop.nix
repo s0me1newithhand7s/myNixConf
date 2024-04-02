@@ -10,15 +10,39 @@
 
 
     # Networking
-    networking.hostName = "s0mePC-nix";
-    networking.wireless.enable = false;
-    networking.networkmanager.enable = true;
-    # networking.proxy.default = "http://user:password@proxy:port/";
-    # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-    # networking.firewall.enable = enable;
-    # networking.firewall.allowedTCPPorts = [ ... ];
-    # networking.firewall.allowedUDPPorts = [ ... ];
-    time.timeZone = "Europe/Moscow";
+    networking = {
+        # bonds = ;
+        # bridges = ;
+        firewall = { 
+            allowping = true;
+            # allowedTCPPorts = [ ... ];
+            # allowedTCPPortRanges = [ 
+                # { from = ...; to = ...; }
+            # ];
+            # allowedUDPPorts = [ ... ]; 
+            # allowedUDPPortRanges = [ 
+                # { from = ...; to = ...; }
+            # ];
+            enable = enable;
+        };
+        hostName = "s0mePC-nix";
+        networkmanager = {
+            enable = true;
+        };
+        # proxy = {
+            # allProxy = ;
+            # default = ;
+            # ftpProxy = ;
+            # httpProxy = ;
+            # httpsProxy = ;
+            # noProxy = ;
+            # rsyncProxy = ;
+
+        # };
+        wireless = {
+            enable = false;
+        };
+    };  
 
 
     # Packages
@@ -33,23 +57,24 @@
     # Keeb and smth like it
     i18n.defaultLocale = "en_US.UTF-8";
     console = {
-        font = "Lat2-Terminus16";
+        enable = true;
+        font = "HackRegular-16";
         keyMap = "us";
-         useXkbConfig = false;  
+        # packages = [ ... ];
+        useXkbConfig = false;  
     };
 
 
     # Services
-    services.printing.enable = false;
-    # services.printing.drivers = [ YOUR_DRIVER ];
-    # hardware.printers = {
-    #    ensurePrinters = [ ... ];
-    # };
-    services.avahi = {
-        enable = false;
-        nssmdns4 = false;
-        openFirewall = false;
+    services = {
+        avahi = {
+            enable = false;
+            nssmdns4 = false;
+            openFirewall = false;
+        };
+        printing = {
+            enable = false;
+            # drivers = [ YOUR_DRIVER ];
+        };
     };
-
-
 }

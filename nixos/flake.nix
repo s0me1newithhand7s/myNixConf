@@ -21,9 +21,11 @@
 
                     home-manager.nixosModules.home-manager
                     {
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.useUserPackages = true;
-                        home-manager.users.hand7s = import ./home.nix;
+                        home-manager = {
+                            useGlobalPkgs = true;
+                            useUserPackages = true;
+                            users.hand7s = import ./home.nix;
+                        };
                     }
                 ];
             };
@@ -37,9 +39,11 @@
 
                     home-manager.nixosModules.home-manager
                     {
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.useUserPackages = true;
-                        home-manager.users.hand7s = import ./home.nix;
+                        home-manager = {
+                            useGlobalPkgs = true;
+                            useUserPackages = true;
+                            users.hand7s = import ./home.nix;
+                        };
                     }
                 ];
             };
