@@ -12,9 +12,64 @@
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-    # In case you need GRUB2 - edit, i have no need in GRUB2
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
+    # Boot options
+    boot = {
+        devShmSize = "50%";
+        devSize = "5%";
+        kernel = {
+            enable = true;
+            # randstructSeed = " ... ";
+            # sysctl = [ ... ];
+        };
+        # kernelModules = [ ... ];
+        # kernelParams = [ .. ];
+        loader = {
+            };
+            efi = {
+                canTouchEfiVariables = true;
+                efiSysMountPoint = "/boot";
+            };
+            grub = {
+                default = "0";
+                # device = ;
+                # devices = [ ... ];
+                efiInstallAsRemovable = false;
+                efiSupport = false;
+                enable = false;
+                font = "${pkgs.grub2}/share/grub/unicode.pf2";
+                fontSize = 16;
+                # theme = ;
+                # users = { ... };
+            };
+            systemd-boot = {
+                enable = true;
+                memtest86 = {
+                    enable = true;
+                    sortKey = "o_memtest86";
+                };
+                netbootxyz = {
+                    enable = false;
+                    sortKey = "o_netbootxyz";
+                };
+                sortKey = "nixos";
+            };
+            raspberryPi = {
+                enable = false;
+                version = "2";
+
+            };
+            runSize = "25%";
+            tmp = {
+                cleanOnBoot = false;
+                tmpfsSize = "50%";
+                useTmpfs = false;
+            };
+            zfs = {
+                enabled = false;
+            };
+        };
+    };
+
 
 
     system.stateVersion = "23.11"; # DO NOT FUCKING TOUCH.
