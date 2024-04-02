@@ -17,7 +17,7 @@ git clone https://github.com/s0me1newithhand7s/conf.nix
 there you'll have **MY VERSION** of config. edit it to use, yes, it *is* important. 
 to do this just use your text editor, and change:
  - hostname in `flake.nix` and `desktop.nix` / `server.nix`; 
- - username in `configuration.nix`; `users.nix` and `home.nix`;
+ - username in `configuration.nix`, `users.nix` and `home.nix`;
  - add your prefered WM or DE in `WM.nix` or `DE.nix` respectively. use https://nixos.wiki/ to find properly and correctly install WM or DE;
  - ~~according to your HW use `amd.nix` or `nvidia.nix`. there is plans for `intel.nix` but i don't have intel GPU;~~ no, more in https://github.com/s0me1newithhand7s/myNixConf?tab=readme-ov-file#offtop part.
 ### thirdly:
