@@ -10,7 +10,12 @@
         #./conf.d/server.nix
     ];
 
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    nix.settings = {
+        allowed-users = [ hand7s root ];
+        experimental-features = [ "nix-command" "flakes" ];
+        sandbox = true;
+        trusted-users = [ hand7s root ];
+    };
 
     # Boot options
     boot = {
