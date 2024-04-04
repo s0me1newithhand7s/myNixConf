@@ -11,10 +11,10 @@
     ];
 
     nix.settings = {
-        allowed-users = [ hand7s root ];
+        allowed-users = [ "hand7s" "root" ];
         experimental-features = [ "nix-command" "flakes" ];
         sandbox = true;
-        trusted-users = [ hand7s root ];
+        trusted-users = [ "hand7s" "root" ];
     };
 
     # Boot options
@@ -29,7 +29,6 @@
         # kernelModules = [ ... ];
         # kernelParams = [ .. ];
         loader = {
-            };
             efi = {
                 canTouchEfiVariables = true;
                 efiSysMountPoint = "/boot";
