@@ -13,7 +13,7 @@
         # bonds = ;
         # bridges = ;
         firewall = { 
-            allowping = true;
+            allowPing = true;
             # allowedTCPPorts = [ ... ];
             # allowedTCPPortRanges = [ 
                 # { from = ...; to = ...; }
