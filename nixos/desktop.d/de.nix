@@ -24,7 +24,6 @@
             plasma5.enable = false;
             plasma6.enable = false;
             mate.enable = false;
-            posh.enable = false;
             retroarch.enable = false;
             xterm.enable = false;
         };
