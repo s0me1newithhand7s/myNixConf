@@ -23,7 +23,7 @@
             # allowedUDPPortRanges = [ 
                 # { from = ...; to = ...; }
             # ];
-            enable = enable;
+            enable = true;
         };
         hostName = "s0mePC-nix";
         networkmanager = {
