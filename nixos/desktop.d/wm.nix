@@ -1,6 +1,5 @@
 {
     programs = {
-        cage.enable = false;
         hyprland.enable = false;
         labwc.enable = false;
         river.enable = false;
