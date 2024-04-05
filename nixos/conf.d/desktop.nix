@@ -47,11 +47,19 @@
 
     # Packages
     nixpkgs.config.allowUnfree = true;
-    environment.systemPackages = with pkgs; [
-        helix
-        # foot
-        # st
-        # feel free to add needed pkg here
+    environment = {
+        systemPackages = with pkgs; [
+            helix
+            # foot
+            # st
+            # feel free to add needed pkg here
+        ];
+        # gnome.excludePackages = with pkgs.gnome; [ ];
+        # plasma5.excludePackages = with pkgs.libsForQt5; [ ];
+        # plasma5.excludePackages = with pkgs.kdePackages; [ ];
+    };
+    fonts.packages = with pkgs; [
+        HackRegular
     ];
 
     # Keeb and smth like it
@@ -74,7 +82,7 @@
         };
         printing = {
             enable = false;
-            # drivers = [ YOUR_DRIVER ];
+            # drivers = [ ... ];
         };
     };
 }

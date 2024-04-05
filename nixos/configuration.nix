@@ -27,7 +27,15 @@
             # sysctl = [ ... ];
         };
         # kernelModules = [ ... ];
-        # kernelParams = [ .. ];
+        # kernelParams = [ ... ];
+        kernelPackages = with pkgs;  {
+            # linuxPackages_rpi;
+            # linuxPackages_zen;
+            # linuxPackages_latest;
+            # linuxPackages_hardened;
+            # linuxPackages-libre;
+            # linuxPackages_xanmod;
+        };
         loader = {
             efi = {
                 canTouchEfiVariables = true;
@@ -73,8 +81,6 @@
             };
         };
     };
-
-
 
     system.stateVersion = "23.11"; # DO NOT FUCKING TOUCH.
 }
