@@ -22,13 +22,13 @@
             fluxbox.enable = false;
             fvwm2.enable = false;
             fvwm3.enable = false;
-            hackednox.enable = false;
+            hackedbox.enable = false;
             herbstluftwm.enable = false;
             hypr.enable = false;
             i3.enable = false;
             icewm.enable = false;
             jwm.enable = false;
-            katariawm.enable = false;
+            katriawm.enable = false;
             leftwm.enable = false;
             lwm.enable = false;
             metacity.enable = false;
