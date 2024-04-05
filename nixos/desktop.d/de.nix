@@ -16,7 +16,7 @@
             budgie.enable = false;
             cinnamon.enable = false;
             deepin.enable = false;
-            enlightment.enable = false;
+            enlightenment.enable = false;
             gnome.enable = false;
             kodi.enable = false;
             lumina.enable = false;
