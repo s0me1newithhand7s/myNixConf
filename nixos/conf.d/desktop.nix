@@ -59,7 +59,7 @@
         # plasma5.excludePackages = with pkgs.kdePackages; [ ];
     };
     fonts.packages = with pkgs; [
-        HackRegular
+        hack-font
     ];
 
     # Keeb and smth like it
