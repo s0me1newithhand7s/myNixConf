@@ -4,12 +4,14 @@
 
 {
     imports = [
+        inputs.home-manager.nixosModules.home-manager
         ./hardware-configuration.nix
         ./users.nix
         #./conf.d/desktop.nix
         #./conf.d/server.nix
     ];
 
+    # nixos and nix daemon settings
     nix.settings = {
         allowed-users = [ "hand7s" "root" ];
         experimental-features = [ "nix-command" "flakes" ];
@@ -17,7 +19,15 @@
         trusted-users = [ "hand7s" "root" ];
     };
 
-    # Boot options
+    # hm stuff
+    home-manager = {
+        extraSpecialArgs = { inherit inputs; };
+        users = {
+            hand7s = import ./home.nix;
+        };
+    };
+
+    # boot options
     boot = {
         devShmSize = "50%";
         devSize = "5%";
@@ -61,15 +71,6 @@
                 enable = false;
                 version = "2";
 
-            };
-            runSize = "25%";
-            tmp = {
-                cleanOnBoot = false;
-                tmpfsSize = "50%";
-                useTmpfs = false;
-            };
-            zfs = {
-                enabled = false;
             };
         };
     };
