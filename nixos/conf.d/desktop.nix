@@ -61,7 +61,6 @@
     fonts.packages = with pkgs; [
         hack-font
     ];
-    programs.home-manager.enable = true;
 
     # Keeb and smth like it
     i18n.defaultLocale = "en_US.UTF-8";
