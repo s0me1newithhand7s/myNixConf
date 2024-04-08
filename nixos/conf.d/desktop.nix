@@ -52,6 +52,7 @@
             helix
             # foot
             # st
+            home-manager
             # feel free to add needed pkg here
         ];
         # gnome.excludePackages = with pkgs.gnome; [ ];
