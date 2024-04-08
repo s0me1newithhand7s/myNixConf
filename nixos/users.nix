@@ -5,7 +5,6 @@
     users.users.hand7s = {
         description = "hand7s aka s0me1newithhand7s";
         extraGroups = [ "wheel" ]; 
-        group = [ "docker" ];
         isSystemUser = true;
         isNormalUser = true;
         initialPassword = "password";
