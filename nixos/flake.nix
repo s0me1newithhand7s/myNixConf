@@ -35,16 +35,6 @@
                 system = "x86_64-linux";
                 modules = [
                     ./configuration.nix
-        
-
-                    home-manager.nixosModules.home-manager
-                    {
-                        home-manager = {
-                            useGlobalPkgs = true;
-                            useUserPackages = true;
-                            users.hand7s = import ./home.nix;
-                        };
-                    }
                 ];
             };
         };
