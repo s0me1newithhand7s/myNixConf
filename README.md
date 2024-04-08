@@ -1,5 +1,5 @@
 # myNixConf
-My ultimate nixos configuration (still it testing)!!
+My ultimate nixos configuration (my main config xd)!!
 
 # How to clone
 (must be executed as `root`)
