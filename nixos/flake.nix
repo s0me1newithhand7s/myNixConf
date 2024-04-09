@@ -23,8 +23,6 @@
                         ./configuration.nix
                     ];
                 };
-            };
-            nixosConfigurations = {
                 s0meserv1-nix = nixpkgs.lib.nixosSystem {
                     specialArgs = { inherit inputs system; };
                     modules = [
