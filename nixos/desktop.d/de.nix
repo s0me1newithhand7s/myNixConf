@@ -1,7 +1,7 @@
 {
     services.xserver = {
         enable = true;
-            displayManager = {
+        displayManager = {
             autoLogin.enable = false;
             gdm.enable = false;
             lightdm.enable = false;
