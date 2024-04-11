@@ -5,10 +5,7 @@
             autoLogin.enable = false;
             gdm.enable = false;
             lightdm.enable = false;
-            sddm = {
-                enable = false;
-                wayland.enable = false;
-            };
+            sddm.enable = false;
             startx.enable = false;
             xpra.enable = false;
         };
