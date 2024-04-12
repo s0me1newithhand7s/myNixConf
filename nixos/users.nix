@@ -1,5 +1,7 @@
 # It's recommended to edit this file
 
+{ pkgs, ... }:
+
 {
     # Don't forget to change `initialPassword` to yours!
     users.users.hand7s = {
