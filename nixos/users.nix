@@ -7,7 +7,7 @@
     users.users.hand7s = {
         description = "hand7s aka s0me1newithhand7s";
         extraGroups = [ "wheel" ]; 
-        isSystemUser = true;
+        isSystemUser = false;
         isNormalUser = true;
         initialPassword = "password";
         packages = with pkgs; [
