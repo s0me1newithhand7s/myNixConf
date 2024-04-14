@@ -1,3 +1,5 @@
+# de and dm options
+
 {
     services =
         desktopManager = {
