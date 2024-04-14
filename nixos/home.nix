@@ -1,4 +1,4 @@
-# Home Manager itself, nothing here
+# basic hm stuff
 
 {
     home = {
