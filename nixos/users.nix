@@ -3,7 +3,7 @@
 { pkgs, ... }:
 
 {
-    # Don't forget to change `initialPassword` to yours!
+    # don't forget to change `initialPassword` to yours!
     users.users.hand7s = {
         description = "hand7s aka s0me1newithhand7s";
         extraGroups = [ "wheel" ]; 
