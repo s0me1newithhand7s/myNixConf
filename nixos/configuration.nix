@@ -1,4 +1,4 @@
-# NixOS / Nix config by hand7s aka s0me1newithhand7s
+# nixos config
 
 { config, lib, pkgs, inputs, ... }:
 
