@@ -1,4 +1,4 @@
-# It's recommended to edit this file
+# users file, add urself / edit existing user 
 
 { pkgs, ... }:
 
