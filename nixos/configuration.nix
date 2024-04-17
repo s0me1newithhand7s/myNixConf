@@ -36,8 +36,6 @@
 
     # boot options
     boot = {
-        devShmSize = "50%";
-        devSize = "5%";
         kernel = {
             enable = true;
             # randstructSeed = " ... ";
@@ -51,6 +49,7 @@
                 efiSysMountPoint = "/boot";
             };
             grub = {
+		configurationLimit = 5;
                 default = "0";
                 # device = ;
                 # devices = [ ... ];
@@ -63,6 +62,7 @@
                 # users = { ... };
             };
             systemd-boot = {
+		configurationLimit = 5;
                 enable = true;
                 memtest86 = {
                     enable = true;
