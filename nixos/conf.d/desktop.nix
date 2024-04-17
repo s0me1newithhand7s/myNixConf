@@ -5,6 +5,7 @@
 {
     imports = [
         # ../desktop.d/de.nix
+        # ../desktop.d/dm.nix
         # ../desktop.d/wm.nix
     ];
 

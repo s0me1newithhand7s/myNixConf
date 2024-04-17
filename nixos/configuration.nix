@@ -12,12 +12,19 @@
     ];
 
     # nixos and nix daemon settings
-    nix.settings = {
-        allowed-users = [ "hand7s" "root" ];
-        experimental-features = [ "nix-command" "flakes" ];
-        sandbox = true;
-        trusted-users = [ "hand7s" "root" ];
-    };
+    nix = {
+        gc = {
+	     	automatic  = true;
+	 	    dates      = "weekly";
+	 	    persistent = true;
+         };
+        settings = {
+            allowed-users = [ "hand7s" "root" ];
+            experimental-features = [ "nix-command" "flakes" ];
+            sandbox = true;
+            trusted-users = [ "hand7s" "root" ];
+        };
+    }; 
 
     # hm stuff
     home-manager = {
@@ -29,10 +36,6 @@
 
     # boot options
     boot = {
-        devShmSize = "50%";
-        devSize = "5%";
-        runSize = "25%";
-        isContainer = false;
         kernel = {
             enable = true;
             # randstructSeed = " ... ";
@@ -46,6 +49,7 @@
                 efiSysMountPoint = "/boot";
             };
             grub = {
+		configurationLimit = 5;
                 default = "0";
                 # device = ;
                 # devices = [ ... ];
@@ -58,6 +62,7 @@
                 # users = { ... };
             };
             systemd-boot = {
+		configurationLimit = 5;
                 enable = true;
                 memtest86 = {
                     enable = true;
@@ -68,12 +73,6 @@
                     sortKey = "o_netbootxyz";
                 };
                 sortKey = "nixos";
-            };
-            tmp = {
-                cleanOnBoot = false;
-                tmpfsSize = "25%";
-                useTmpfs = false;
-                
             };
             raspberryPi = {
                 enable = false;
