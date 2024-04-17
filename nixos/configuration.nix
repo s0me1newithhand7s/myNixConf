@@ -31,6 +31,8 @@
     boot = {
         devShmSize = "50%";
         devSize = "5%";
+        runSize = "25%";
+        isContainer = false;
         kernel = {
             enable = true;
             # randstructSeed = " ... ";
@@ -66,6 +68,12 @@
                     sortKey = "o_netbootxyz";
                 };
                 sortKey = "nixos";
+            };
+            tmp = {
+                cleanOnBoot = false;
+                tmpfsSize = "25%";
+                useTmpfs = false;
+                
             };
             raspberryPi = {
                 enable = false;
