@@ -13,7 +13,10 @@
         packages = with pkgs; [
             google-chrome
             discord
+            # vesktop
             telegram-desktop
+            # _64gram
+            starship
         ];
     };
 }
