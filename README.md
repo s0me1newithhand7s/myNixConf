@@ -12,7 +12,7 @@ nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixos
 this is (IMHO) THE best nixos and nix channel. feel free to not to do this step.
 ### secnodly:
 ```shell
-git clone https://github.com/s0me1newithhand7s/conf.nix
+git clone -b testing https://github.com/s0me1newithhand7s/conf.nix
 ```
 there you'll have **MY VERSION** of config. edit it to use, yes, it *is* important. 
 to do this just use your text editor, and change:
