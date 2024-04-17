@@ -12,12 +12,19 @@
     ];
 
     # nixos and nix daemon settings
-    nix.settings = {
-        allowed-users = [ "hand7s" "root" ];
-        experimental-features = [ "nix-command" "flakes" ];
-        sandbox = true;
-        trusted-users = [ "hand7s" "root" ];
-    };
+    nix = {
+        gc = {
+	     	automatic  = true;
+	 	    dates      = "weekly";
+	 	    persistent = true;
+         };
+        settings = {
+            allowed-users = [ "hand7s" "root" ];
+            experimental-features = [ "nix-command" "flakes" ];
+            sandbox = true;
+            trusted-users = [ "hand7s" "root" ];
+        };
+    }; 
 
     # hm stuff
     home-manager = {
