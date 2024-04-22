@@ -68,7 +68,7 @@
     i18n.defaultLocale = "en_US.UTF-8";
     console = {
         enable = true;
-        font = "HackRegular-16";
+        # font = "";
         keyMap = "us";
         # packages = [ ... ];
         useXkbConfig = false;  
