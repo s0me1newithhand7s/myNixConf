@@ -1,5 +1,3 @@
-# Flakes config, kinda messed up bc i'm still new in nix xd
-
 {
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
