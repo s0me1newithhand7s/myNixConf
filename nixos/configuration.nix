@@ -6,12 +6,11 @@
     imports = [
         ./hardware-configuration.nix
         ./users.nix
-        ./home.modules/modules.nix
         ./host.modules/modules.nix
         ./general.modules/modules.nix
     ];
 
 
 
-    system.stateVersion = "23.11"; # DO NOT FUCKING TOUCH.
+    system.stateVersion = "24.05"; # DO NOT FUCKING TOUCH.
 }

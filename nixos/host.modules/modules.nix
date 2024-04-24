@@ -6,7 +6,7 @@
         ./modules.d/locales.nix
         ./modules.d/virtualisation.nix
         ./modules.d/nixpkgs.nix
-        ./modules.d/netwoking.nix
+        ./modules.d/networking.nix
         ./modules.d/env.nix
     ];
-};
+}

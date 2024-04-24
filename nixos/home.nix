@@ -7,7 +7,7 @@
     home = {
         username = "hand7s";
         homeDirectory = "/home/hand7s";
-        stateVersion = "23.11";
+        stateVersion = "24.05";
         shellAliases = {
             ff = "clear; nix run nixpkgs#fastfetch";
             nf = "clear; nix run nixpkgs#neofetch";

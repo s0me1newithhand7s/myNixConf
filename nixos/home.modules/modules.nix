@@ -5,4 +5,4 @@
         ./modules.d/foot.nix
         ./modules.d/starship.nix
     ];
-};
+}

@@ -17,15 +17,11 @@
             nixosConfigurations = {
                 s0mePC-nix = nixpkgs.lib.nixosSystem {
                     specialArgs = { inherit inputs system; };
-                    modules = [
-                        ./configuration.nix
-                    ];
+                    modules = [ ./configuration.nix ];
                 };
                 s0meserv1-nix = nixpkgs.lib.nixosSystem {
                     specialArgs = { inherit inputs system; };
-                    modules = [
-                        ./configuration.nix
-                    ];
+                    modules = [ ./configuration.nix ];
                 };
             };
         };

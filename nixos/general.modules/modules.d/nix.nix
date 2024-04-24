@@ -10,7 +10,7 @@
 	     	automatic  = true;                                      # automatic GC
 	 	    dates      = "weekly";                                  # how often
 	 	    persistent = true;                                      # regulates time by saving it on disk
-            randomizedDelaySec = "0"                                # randomize time before GCing 
+            randomizedDelaySec = "0";                               # randomize time before GCing 
         };
         registry = {
             # read https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-registry before use;
@@ -28,4 +28,4 @@
             # more options here: https://search.nixos.org/options?channel=unstable&from=0&size=50&sort=alpha_asc&type=packages&query=nix.sshServe.
         };
     }; 
-};
+}

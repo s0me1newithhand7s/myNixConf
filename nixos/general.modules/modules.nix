@@ -4,4 +4,4 @@
         ./modules.d/nix.nix
         ./modules.d/hm.nix
     ];
-};
+}

@@ -5,8 +5,8 @@
         config = { 
             allowUnfree = true;     # allows unfree pkgs
             allowBroken = false;    # restricts broken pkgs
-        };;
+        };
         overlays = [ ];             # overlays in case you have
-        system = "x86_64-linux"
+        system = "x86_64-linux";
     };
 }

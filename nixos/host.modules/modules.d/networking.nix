@@ -38,4 +38,4 @@
         timeZone = "Europe/Moscow";             # TZ, see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
         hardwareClockInLocalTime = false;       # keep the hardware clock in local time instead of UTC in case being "toggle"
     };
-};
+}
