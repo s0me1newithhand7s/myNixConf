@@ -1,3 +1,5 @@
+{ config, pkgs, ...}:
+
 {
 
     import = [  
@@ -21,8 +23,13 @@
         ];
         pointerCursor = {
             name = "apple-cursor";
-            # package with pkgs; = [ apple-cursor ];
+            package with pkgs; = [ apple-cursor ];
             size = 32;
+            gtk.enable = false;
+            x11 = {
+                enable = false;
+                defaultCursor = "left_ptr";
+            };
         };
     };
 }
