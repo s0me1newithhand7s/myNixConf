@@ -4,7 +4,6 @@
 
 {
     imports = [
-        ./hardware-configuration.nix
         ./users.nix
         ./host.modules/modules.nix
         ./general.modules/modules.nix

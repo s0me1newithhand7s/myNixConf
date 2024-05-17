@@ -1,40 +1,41 @@
 { pkgs, ... }:
 
 {
-    # Services
-    services = {                                    # nixos service options
-        avahi = {                                   # more about avahi - https://avahi.org/
+    services = {                                     # nixos service options
+        avahi = {                                    # more about avahi - https://avahi.org/
             # allowInterfaces = [];
-            enable = false;                         # toggle for enabling avahi service
+            enable = false;                          # toggle for enabling avahi service
             nssmdns4 = false;
             openFirewall = false;
             # package = [ ... ];
         };
-        printing = {                                # printing, more here - https://wiki.nixos.org/wiki/Printing
-            enable = false;                         # toggle for enabling printing service
+        printing = {                                 # printing, more here - https://wiki.nixos.org/wiki/Printing
+            enable = false;                          # toggle for enabling printing service
             # drivers = [ ... ];
             # package with pkgs; = [ ... ]
         };
-        openssh = {                                 # openssh options
-            enable = false;                         # toggle for enabling openssh 
-            allowSFTP = true;                       # toggle for enabling SFTP 
-            X11Forwarding = true;                   # toggle for enabling X11 forwarding or 'ssh +x' 
+        openssh = {                                  # openssh options
+            enable = false;                          # toggle for enabling openssh 
+            allowSFTP = true;                        # toggle for enabling SFTP 
+            X11Forwarding = true;                    # toggle for enabling X11 forwarding or 'ssh +x' 
         };
-        xserver = {                                 # xserver options
-            enable = true;                          # toggle for enabling xserver
-            excludePackages = [                     # option for excluding some packages from basic xserver
+        xserver = {                                  # xserver options
+            enable = true;                           # toggle for enabling xserver
+            excludePackages = [                      # option for excluding some packages from basic xserver
                 pkgs.xterm
             ];
-            display = 0;                            # option for default monitor
-            libinput = {                            # libinput options
-                mouse = {                           # for mouse 
+            display = 0;                             # option for default monitor
+            libinput = {                             # libinput options
+                enable = true;
+                buttonMapping = "1 2 3 4 5 6 7 8 9"; # mapping for buttons                          
+                mouse = {                            # for mouse 
                     accelProfile = "flat";
                     accelSpeed = "-1.0";
                     horizontalScrolling = true;
                     leftHanded = false;
                     naturalScrolling = true;
                 };
-                touchpad = {                        # for touchpad
+                touchpad = {                         # for touchpad
                     accelProfile = "adaptive";
                     accelSpeed = "-1.0";
                     clickMethod = "clickfinger";
@@ -49,11 +50,12 @@
                 enable = false;
                 # wacom drivers needed to be configured by yourself
             };
-            xkb = {                                 # xkb options
-                layout = "us, ru";                  # layouts
-                xkbVarian = "qwerty";               # if your keyboard isn't QWERTY - set it here
-                xkbOptions = "grp:caps_toggle";     # switching method for xkb
+            xkb = {                                  # xkb options
+                layout = "us, ru";                   # layouts
+                xkbVarian = "qwerty";                # if your keyboard isn't QWERTY - set it here
+                xkbOptions = "grp:caps_toggle";      # switching method for xkb
             };
+            videoDrivers = [ "amdgpu"];              # drivers module
         };
     };
 }

@@ -3,7 +3,7 @@
         # bonds = ;
         # bridges = ;
         firewall = {                            # firewall options
-            allowPing = true;                   # you can restrict ping to your host in case you'll need
+            allowPing = false;                   # you can restrict ping to your host in case you'll need
             # allowedTCPPorts = [ ... ];        # allowed ports TCP and UDP, below option for ranges
             # allowedTCPPortRanges = [ 
                 # { from = ...; to = ...; }
@@ -14,8 +14,7 @@
             # ];
             enable = true;                      # toggle for enabling firewall
         };
-        hostName = "s0meserv1-nix";             # my hostnamesm below is Desktop variant
-        # hostName = "s0mePC-nix";
+        hostName = "s0me-nix";                  # hostname for ur PC
         networkmanager = {                      # NM options
             enable = true;                      # toggle for NM
             dns = "default";                    # dns option for NM
@@ -33,6 +32,7 @@
             # noProxy = ;
             # rsyncProxy = ;
         # };
+        useDHCP = false;                         # DHCP setting. you MUST follow generated hardware-configuration.nix
     };
     time = {                                    # basically TZ and HW clocks
         timeZone = "Europe/Moscow";             # TZ, see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones

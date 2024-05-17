@@ -1,9 +1,13 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, modulesPath, ... }:
 
 {
-    boot = {                                       # boot options
-        # kernelModules = [ ... ]; 
-        # kernelParams = [ ... ];
+    imports =
+    [ (modulesPath + "/installer/scan/not-detected.nix") ];
+    
+    boot = {      
+        extraModulePackages = [ ];                                # boot options
+        kernelPackages = pkgs.linuxPackages_latest;               # kernel version and type to boot
+        kernelModules = [ "amdgpu" ];                             # kernel modules, like drivers
         loader = {                              # options for bootloaders
             efi = {                             # basic efi options needed for UEFI systems
                 canTouchEfiVariables = true;
@@ -42,8 +46,12 @@
                     configurationLimit = 5;     # limits of generation
                 };
                 version = "2";                  # version of RPi bootloader, default is 2
-
             };
         };
+        initrd = {
+            availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+            kernelModules = [ ];
+        };
+        supportedFilesystems = [ "ntfs" ];     # supported FSes modules
     };
 }

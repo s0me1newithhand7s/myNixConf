@@ -3,9 +3,11 @@
 {
     environment = {
         systemPackages = with pkgs; [               # system-wide packages
-            home-manager
-            # feel free to add needed pkg here
+        
         ];
+        shellAliases = {                            # global aliases
+            
+        };
 
         # below is options for disabling packages for DE's
 
@@ -19,5 +21,5 @@
         # plasma5.excludePackages =  [ ];
         # plasma5.excludePackages =  [ ];
         # xfce.excludePackages = [ ];
-    };
+     };
 }

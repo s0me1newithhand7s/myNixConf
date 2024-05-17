@@ -13,7 +13,7 @@
                 kodi.enable = false;            # toggle for kodi DE
                 lumina.enable = false;          # toggle for Lumina DE
                 lxqt.enable = false;            # toggle for LXQt DE
-                    plasma5.enable = false;         # toggle for KDE Plasma 5
+                plasma5.enable = false;         # toggle for KDE Plasma 5
                 mate.enable = false;            # toggle for MATE DE
                 retroarch.enable = false;       # toggle for RetroArch DE
                 xterm.enable = false;           # toggle for xterm idk

@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-    
     users = { 
         mutableUsers = true;                                    # if FALSE you'll need to add every new users with their passwords here.
         users = {
@@ -12,11 +11,7 @@
                 isNormalUser = true;                            # or this must be true
                 initialPassword = "password";                   # password for user
                 packages = with pkgs; [                         # user's packages
-                    google-chrome
-                    discord
-                    # vesktop
-                    telegram-desktop
-                    # _64gram
+                    
                 ];
             };
         };
