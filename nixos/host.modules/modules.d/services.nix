@@ -55,7 +55,7 @@
                 xkbVarian = "qwerty";                # if your keyboard isn't QWERTY - set it here
                 xkbOptions = "grp:caps_toggle";      # switching method for xkb
             };
-            videoDrivers = [ "amdgpu"];              # drivers module
+            videoDrivers = [ ];              # drivers module
         };
     };
 }
