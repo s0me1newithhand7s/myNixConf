@@ -7,7 +7,7 @@
     boot = {      
         extraModulePackages = [ ];                                # boot options
         kernelPackages = pkgs.linuxPackages_latest;               # kernel version and type to boot
-        kernelModules = [ "amdgpu" ];                             # kernel modules, like drivers
+        kernelModules = [ ];                             # kernel modules, like drivers
         loader = {                              # options for bootloaders
             efi = {                             # basic efi options needed for UEFI systems
                 canTouchEfiVariables = true;
@@ -49,9 +49,9 @@
             };
         };
         initrd = {
-            availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+            availableKernelModules = [ ];
             kernelModules = [ ];
         };
-        supportedFilesystems = [ "ntfs" ];     # supported FSes modules
+        supportedFilesystems = [ ];     # supported FSes modules
     };
 }
