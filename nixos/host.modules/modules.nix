@@ -6,6 +6,6 @@
         ./modules.d/locales.nix
         ./modules.d/networking.nix
         ./modules.d/env.nix
-        ./hardware.nix
+        ./modules.d/hardware.nix
     ];
 }
