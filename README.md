@@ -1,42 +1,86 @@
-# myNixConf
-my ultimate nixos configuration (my main config xd)!!
+<h1 align=center>myNixConf :snowflake:</h1>
+<h4 align=center>my ultimate nixos configuration (my main config xd)!! </h4>
 
-# How to clone
-(must be executed as `root`)
+![240517_15-16-16](https://github.com/s0me1newithhand7s/myNixConf/assets/117505144/6248ba34-3e15-4529-98c1-bfce7719bfa8)
 
-### firstly:
-add **nix unstable channel**:
+<hr/>
+<br>
+<br>
+
+<h1 align=center> How to </h1> 
+<p>Steps to migrate from your previous NixOS configuration to mine.</p>
+<h3 align=center> firstly: </h3>
+
+add **nix unstable channel** and **home-manager**:
 ```shell
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixos
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
 ```
-this is (IMHO) THE best nixos and nix channel. feel free to not to do this step.
-### secnodly:
-```shell
-git clone https://github.com/s0me1newithhand7s/conf.nix
-```
-there you'll have **MY VERSION** of config. edit it to use, yes, it *is* important. 
-to do this just use your text editor, and change:
- - hostname in `flake.nix` and `desktop.nix` / `server.nix`; 
- - username in `configuration.nix`, `users.nix` and `home.nix`;
- - activate prefered `wm` or `de` with `session manager` in `wm.nix` or `de.nix` respectively. (HUUUGE upgrade)
- - ~~according to your HW use `amd.nix` or `nvidia.nix`. there is plans for `intel.nix` but i don't have intel GPU;~~ no, more in https://github.com/s0me1newithhand7s/myNixConf?tab=readme-ov-file#offtop part.
-### thirdly:
-check if there is **hardware-configuration.nix** in your system. don't forget to made proper backup of your config, and properly test created config with `nixos-rebuild test --flake /etc/nixos/.#hostname` where `hostname` is your edited hostname
-P.S.
-   i really recommend to edit `server.nix` or `desktop.nix` bc main purpose of this configs is *being some kind of example how nix and nixos can be configured and work*.
+<h3 align=center> secondly: </h3>
 
-# How to use
-after *triple* checking everything and running `nixos-rebuild test --flake /etc/nixos/.#hostname` and resiving no errors feel free to:
+clone **this repo**:
 ```shell
-nixos-rebuild switch --upgrade --flake /etc/nixos/.#hostname
+git clone https://github.com/s0me1newithhand7s/myNixConf
 ```
-and.. congrats! now you use mine vision of nix config. xd
+
+<h3 align=center> thirdly: </h3>
+
+at this point in your `/etc/nixos` you'll have `configuration.nix` and `harware-configuration.nix`. **backup it**.
+```shell
+mkdir /etc/nixbackup/
+cp /etc/nixos/* /etc/nixbackup
+```
+
+<h3 align=center> fourthly: </h3>
+
+now we rollin':
+```shell
+cd ~/myNixConf/nixos
+```
+for beggining you can edit `home.nix` and `users.nix` for creating *your* user. also don't forget to edit `password` option!
+after this you can edit `host.modules/modules.d/networking.nix` and `flake.nix` to provide *your* hostname. 
+now, open your previous `harware-configuration.nix`, if you forget, we store it in `/etc/nixbackup`, and use it as reference for `general.modules/modules.d/boot.nix`, `general.modules/modules.d/nixpkgs.nix`, `general.modules/modules.d/disks.nix` and `host.modules/modules.d/networking.nix`.
+edit `host.modules/modules.d/dm.nix` and `wm.nix` or `de.nix` in same directory.
+
+<h3 align=center> fifthly: </h3>
+
+now we copy actual config:
+```shell
+rm /etc/nixos/*
+cp -r ~/myNixConf/nixos/* /etc/nixos
+```
+ 
+<h3 align=center> sixthly: </h3>
+
+we will check and correct all the mistakes, if there any of 'em:
+```shell
+nixos-rebuild dry-activate --flake /etc/nixos/.#hostname 
+nixos-rebuild test --flake /etc/nixos/.#hostname
+```
+if there is anything wrong:
+
+[Actual Wiki](https://wiki.nixos.org/) 
+
+[MyNixOS, for options](https://mynixos.com/)
+
+[NixOS search, also options](https://search.nixos.org/)
+
+.. and if everything is good:
+
+<h3 align=center> finally: </h3>
+
+we build:
+```shell
+nixos-rebuild switch --upgrade-all --flake /etc/nixos/.#hostname
+```
+after this i STRONGLY recommend you to reboot.
+
+<hr/>
+<br>
+<br>
 
 # In case of errors / bugs / errors
-There is three steps:
-## Bugtracking
-**Firstly**: Did you triple checked everything? This is not a regular config, some parts can contain errors, that caused by you and me. my work to test mine config, your - to test yours. 
-**Secondly**: try to find proper manuals on wiki or github / gitlab page in case it not mine syntaxis error. i will try to help with navigation, but not with config.
 ## Openning Issue
 how2:
 1. **Your version of config, detailed.** something like: **desktop.nix, amd.nix , de.nix**;
@@ -49,6 +93,10 @@ and please don't just open issue and disappears. xd
 ### P.S
  * i will ingore **ANY** issue what won't be properly created (from now, even mine).
 
+<hr/>
+<br>
+<br>
+
 # Offtop
 ### Why did you put everything in `nixos` folder?
  - imho, this way you wont harm your `configuration.nix` while you editing mine. also this way i'm kinda preventing you from not backing up your working config.
@@ -56,8 +104,8 @@ and please don't just open issue and disappears. xd
  - yes, and main one - to make my life easier. i have [multiple devices](https://pastebin.com/raw/kRSBxh3W) laying around, and much more PCs in my colledge. and writing `configuration.nix` every time i have need it is pain in butt. also, by creating this project, i've done my first big project with bugtracking, fixes and etc. this was my goal on 2024, so i hope i will work with this later on. xd
 ### Is it created for **FULL Reproducibility**?
  - no. i have no need in full reproducibility, bc most of my cases (right now) is create a machine that will work no matter what OS will be on it. with nixos i can achieve it with ease.
-### Why you've removed amd/nvidia dot nix?
- - broken af. unfortunately..
+### Reasosns of `disko.nix` existing?
+ - in case you'll use it as your first and only nixos config you can just edit `disko.nix` and run `nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko myNixConf/nixos/disko.nix` to automize partiotioning.
 ### I want to help you, but don't know how!
  - it's awesome! if you have any ideas how to improve (and not ruin my goals, read whole offtop again pls) this project - message me in matrix / discord / telegram! links in my bio.
 
