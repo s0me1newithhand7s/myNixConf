@@ -16,8 +16,7 @@
         };
         openssh = {                                  # openssh options
             enable = false;                          # toggle for enabling openssh 
-            allowSFTP = true;                        # toggle for enabling SFTP 
-            X11Forwarding = true;                    # toggle for enabling X11 forwarding or 'ssh +x' 
+            allowSFTP = true;                        # toggle for enabling SFTP  
         };
         xserver = {                                  # xserver options
             enable = true;                           # toggle for enabling xserver
