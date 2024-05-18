@@ -7,5 +7,6 @@
         ./modules.d/networking.nix
         ./modules.d/env.nix
         ./modules.d/hardware.nix
+        ./modules.d/services.nix
     ];
 }
