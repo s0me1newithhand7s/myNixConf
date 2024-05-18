@@ -23,8 +23,7 @@
             enable = true;                           # toggle for enabling xserver
             excludePackages = [                      # option for excluding some packages from basic xserver
                 pkgs.xterm
-            ];
-            display = 0;                             # option for default monitor
+            ];                
             libinput = {                             # libinput options
                 enable = true;
                 buttonMapping = "1 2 3 4 5 6 7 8 9"; # mapping for buttons                          
@@ -52,8 +51,8 @@
             };
             xkb = {                                  # xkb options
                 layout = "us, ru";                   # layouts
-                xkbVarian = "qwerty";                # if your keyboard isn't QWERTY - set it here
-                xkbOptions = "grp:caps_toggle";      # switching method for xkb
+                variant = "qwerty";                # if your keyboard isn't QWERTY - set it here
+                options = "grp:caps_toggle";      # switching method for xkb
             };
             videoDrivers = [ ];              # drivers module
         };
