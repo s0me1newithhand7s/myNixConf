@@ -1,3 +1,5 @@
+{ config, pkgs, lib, ... }:
+
 {
     networking = {                              # networking options
         # bonds = ;
