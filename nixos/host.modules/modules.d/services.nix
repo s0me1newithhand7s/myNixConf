@@ -20,9 +20,23 @@
         };
         xserver = {                                  # xserver options
             enable = true;                           # toggle for enabling xserver
+            videoDrivers = [ ];              # drivers module
             excludePackages = [                      # option for excluding some packages from basic xserver
                 pkgs.xterm
-            ];                
+            ];
+            synaptics = {
+                enable = false;
+                # about synaptics you'll need read by yourself
+            };
+            wacom = {
+                enable = false;
+                # wacom drivers needed to be configured by yourself
+            };
+            xkb = {                                  # xkb options
+                layout = "us, ru";                   # layouts
+                variant = "qwerty";                # if your keyboard isn't QWERTY - set it here
+                options = "grp:caps_toggle";      # switching method for xkb
+            };
         };
         libinput = {                             # libinput options
             enable = true;
@@ -41,20 +55,6 @@
                     leftHanded = false;      
             };
         };
-        synaptics = {
-            enable = false;
-            # about synaptics you'll need read by yourself
-        };
-        wacom = {
-            enable = false;
-            # wacom drivers needed to be configured by yourself
-        };
-        xkb = {                                  # xkb options
-            layout = "us, ru";                   # layouts
-            variant = "qwerty";                # if your keyboard isn't QWERTY - set it here
-            options = "grp:caps_toggle";      # switching method for xkb
-        };
-            videoDrivers = [ ];              # drivers module
     };
 }
 
