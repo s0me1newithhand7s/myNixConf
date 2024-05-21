@@ -83,7 +83,7 @@ after this i STRONGLY recommend you to reboot.
 # In case of errors / bugs / errors
 ## Openning Issue
 how2:
-1. **Your version of config, detailed.** something like: **desktop.nix, amd.nix , de.nix**;
+1. **Your version of config, detailed.**;
 2. **Your hardware.** i don't mind how, feel free to provide creative ways xD;
 3. **Your edits in configs.** provide us (to me xd) what exactly you have edited and how.
 4. **Error**. need to explain?
