@@ -1,11 +1,20 @@
 {
     inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-        nixpkgs-master.url = "github:nixos/nixpkgs/master";
+        nixpkgs = { 
+            url = "github:nixos/nixpkgs/nixos-unstable";
+        };
+
+        nixpkgs-master = {
+            url = "github:nixos/nixpkgs/master";
+        };
 
         home-manager = {
             url = "github:nix-community/home-manager/";
             inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        chaotic = {
+            url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
         };
 
         disko = {
@@ -14,7 +23,7 @@
         };
     };
 
-    outputs = inputs@{ self, nixpkgs, home-manager, disko, ... }:
+    outputs = inputs@{ self, nixpkgs, home-manager, disko, chaotic, ... }:
         let 
             system = "x86_64-linux";
             pkgs = import nixpkgs { inherit system; };
