@@ -8,6 +8,10 @@
             url = "github:nixos/nixpkgs/master";
         };
 
+        nix-gaming = {
+            url = "github:fufexan/nix-gaming";
+        };
+
         home-manager = {
             url = "github:nix-community/home-manager/";
             inputs.nixpkgs.follows = "nixpkgs";
