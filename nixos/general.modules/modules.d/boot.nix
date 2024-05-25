@@ -14,7 +14,7 @@
                 efiSysMountPoint = "/boot";
             };
             grub = {                            # GRUB bootloader options, see https://wiki.nixos.org/wiki/GNU_GRUB for more
-		        configurationLimit = 5;         # limits of generation
+		configurationLimit = 5;         # limits of generation
                 default = "0";                  # default generation in list 
                 # device = ;                     # option for legacy boot
                 # devices = [ ... ];             # also option for legacy boot
@@ -27,7 +27,7 @@
                 # users = { ... };               # option for hashed password thing
             };
             systemd-boot = {                    # systemd-boot options, see https://nixos.wiki/wiki/Bootloader for more
-		        configurationLimit = 5;         # limits of generation
+		configurationLimit = 5;         # limits of generation
                 enable = true;                  # toggle for enabling systemd-boot
                 memtest86 = {                   # options for memtest86 or https://www.memtest86.com/
                     enable = true;              
