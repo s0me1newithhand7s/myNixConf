@@ -42,6 +42,7 @@ for beggining you can edit `home.nix` and `users.nix` for creating *your* user. 
 after this you can edit `host.modules/modules.d/networking.nix` and `flake.nix` to provide *your* hostname. 
 now, open your previous `harware-configuration.nix`, if you forget, we store it in `/etc/nixbackup`, and use it as reference for `general.modules/modules.d/boot.nix`, `general.modules/modules.d/nixpkgs.nix`, `general.modules/modules.d/disks.nix` and `host.modules/modules.d/networking.nix`.
 edit `host.modules/modules.d/dm.nix` and `wm.nix` or `de.nix` in same directory.
+and you can add `*.nix`, with *your* services, like Steam, pipewire/pulseaudio and etc! just don't forget to globe them correcrtly in `host.modules/modules.nix`!
 
 <h3 align=center> fifthly: </h3>
 
