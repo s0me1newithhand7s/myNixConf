@@ -11,8 +11,9 @@
 <p>Steps to migrate from your previous NixOS configuration to mine.</p>
 <h3 align=center> firstly: </h3>
 
-add **nix unstable channel** and **home-manager**:
+add **nix unstable channel** and **home-manager** if you haven't done it yet:
 ```shell
+nix-channel --remove nixos
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixos
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
