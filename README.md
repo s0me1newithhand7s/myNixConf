@@ -100,7 +100,7 @@ and please don't just open issue and disappears. xd
 <br>
 <br>
 
-# Offtop
+# Offtop or QnA
 ### Why did you put everything in `nixos` folder?
  - imho, this way you wont harm your `configuration.nix` while you editing mine. also this way i'm kinda preventing you from not backing up your working config.
 ### Is there any point of this whole project existing?
