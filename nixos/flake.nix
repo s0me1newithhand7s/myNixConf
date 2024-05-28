@@ -12,6 +12,10 @@
             url = "github:fufexan/nix-gaming";
         };
 
+        nixgl = {
+            url = "github:nix-community/nixGL";
+        };
+
         home-manager = {
             url = "github:nix-community/home-manager/";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -27,7 +31,7 @@
         };
     };
 
-    outputs = inputs@{ self, nixpkgs, home-manager, disko, chaotic, ... }:
+    outputs = inputs@{ self, nixpkgs, nixgl, home-manager, disko, chaotic, ... }:
         let 
             system = "x86_64-linux";
             pkgs = import nixpkgs { inherit system; };
