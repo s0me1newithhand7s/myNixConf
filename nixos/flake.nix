@@ -1,4 +1,6 @@
 {
+    description = "actually, stock but good reference flake xd";
+    
     inputs = {
         nixpkgs = { 
             url = "github:nixos/nixpkgs/nixos-unstable";
@@ -21,6 +23,10 @@
             url = "github:nix-community/nixGL";
         };
 
+        agenix = {
+            url = "github:"github:ryantm/agenix";
+        };
+
         home-manager = {
             url = "github:nix-community/home-manager/";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -34,9 +40,17 @@
             url = "github:nix-community/disko";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        sops-nix = {
+            url = "github:Mic92/sops-nix";
+        };
+
+        stylix = {
+            url = "github:danth/stylix";
+        };
     };
 
-    outputs = inputs@{ self, nixpkgs, nixgl, nix-darwin, home-manager, disko, chaotic, ... }:
+   outputs = { self, ... } @ inputs:
         let 
             system = "x86_64-linux";
             pkgs = import nixpkgs { inherit system; };
