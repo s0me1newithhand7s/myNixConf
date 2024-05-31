@@ -53,13 +53,17 @@
    outputs = { self, ... } @ inputs:
         let 
             system = "x86_64-linux";
-            pkgs = import nixpkgs { inherit system; };
         in {
             nixosConfigurations = {
                 s0me-nix = nixpkgs.lib.nixosSystem {
                     specialArgs = { inherit inputs system; };
-                    modules = [ ./configuration.nix ];
+                    modules = [  ];
                 };
             };
         };
+    darwin-configuration = {
+        s0me-nix = nix-darwin.lib.darwinSystem {
+            modules = [ ./configuration.nix ];
+        };
+    };
 }
