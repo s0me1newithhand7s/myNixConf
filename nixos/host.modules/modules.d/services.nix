@@ -39,20 +39,21 @@
             };
         };
         libinput = {                             # libinput options
-            enable = true;
-            buttonMapping = "1 2 3 4 5 6 7 8 9"; # mapping for buttons                          
+            enable = true;                          
             mouse = {                            # for mouse 
                 accelProfile = "flat";
                 accelSpeed = "-1.0";
+                buttonMapping = "1 2 3 4 5 6 7 8 9"; # mapping for buttons
                 horizontalScrolling = true;
                 leftHanded = false;
                 naturalScrolling = true;
             };
             touchpad = {                         # for touchpad
-                    accelProfile = "adaptive";
-                    accelSpeed = "-1.0";
-                    clickMethod = "clickfinger";
-                    leftHanded = false;      
+                accelProfile = "adaptive";
+                accelSpeed = "-1.0";
+                buttonMapping = "1 2 3 4 5 6 7 8 9"; # mapping for buttons
+                clickMethod = "clickfinger";
+                leftHanded = false;      
             };
         };
     };
