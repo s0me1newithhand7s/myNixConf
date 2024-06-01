@@ -24,7 +24,7 @@
         };
 
         agenix = {
-            url = "github:"github:ryantm/agenix";
+            url = "github:ryantm/agenix";
         };
 
         home-manager = {
