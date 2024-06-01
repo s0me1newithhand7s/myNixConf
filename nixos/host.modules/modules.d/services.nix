@@ -20,10 +20,8 @@
         };
         xserver = {                                  # xserver options
             enable = true;                           # toggle for enabling xserver
-            videoDrivers = [ ];              # drivers module
-            excludePackages = [                      # option for excluding some packages from basic xserver
-                pkgs.xterm
-            ];
+            videoDrivers = [ ];                      # drivers module
+            excludePackages = [ ];                   # option for excluding some packages from basic xserver
             synaptics = {
                 enable = false;
                 # about synaptics you'll need read by yourself
