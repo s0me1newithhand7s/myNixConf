@@ -50,17 +50,14 @@
         };
     };
 
-   outputs = { self, ... } @ inputs:
-        let 
+outputs = { self, ... } @ inputs:
+    nixosConfigurations = {
+        s0me-nix = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
-        in {
-            nixosConfigurations = {
-                s0me-nix = nixpkgs.lib.nixosSystem {
-                    specialArgs = { inherit inputs system; };
-                    modules = [  ];
-                };
-            };
+            specialArgs = { inherit inputs system; };
+            modules = [  ];
         };
+    };
     darwin-configuration = {
         s0me-nix = nix-darwin.lib.darwinSystem {
             modules = [ ./configuration.nix ];
