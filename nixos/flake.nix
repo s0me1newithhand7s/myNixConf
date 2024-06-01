@@ -50,17 +50,18 @@
         };
     };
 
-outputs = { self, ... } @ inputs:
-    nixosConfigurations = {
-        s0me-nix = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
-            specialArgs = { inherit inputs system; };
-            modules = [  ];
+outputs = { self, ... }@inputs:
+    {
+        nixosConfigurations = {
+            s0me-nix = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules = [  ];
+            };
         };
-    };
-    darwin-configuration = {
-        s0me-nix = nix-darwin.lib.darwinSystem {
-            modules = [ ./configuration.nix ];
+        darwin-configuration = {
+            s0me-nix = nix-darwin.lib.darwinSystem {
+                modules = [ ./configuration.nix ];
+            };
         };
     };
 }
