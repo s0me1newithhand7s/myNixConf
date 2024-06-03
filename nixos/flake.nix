@@ -50,7 +50,7 @@
         };
     };
 
-outputs = { self, ... }@inputs:
+outputs = { self, nixpkgs, chaotic ... }@inputs:
     {
         nixosConfigurations = {
             s0me-nix = nixpkgs.lib.nixosSystem {
