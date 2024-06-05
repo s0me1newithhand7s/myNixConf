@@ -23,6 +23,10 @@
             url = "github:nix-community/nixGL";
         };
 
+        nur = {
+            url = "github:nix-community/NUR";
+        };
+
         agenix = {
             url = "github:ryantm/agenix";
         };
@@ -50,7 +54,7 @@
         };
     };
 
-outputs = { self, nixpkgs, chaotic ... }@inputs:
+outputs = { self, nixpkgs, chaotic, ... }@inputs:
     {
         nixosConfigurations = {
             s0me-nix = nixpkgs.lib.nixosSystem {
