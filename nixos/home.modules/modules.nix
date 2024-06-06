@@ -1,8 +1,6 @@
 {
     imports = [
-        ./modules.d/helix.nix
-        ./modules.d/eza.nix
-        ./modules.d/foot.nix
-        ./modules.d/starship.nix
+        # feel free to write your -.nix files!
+        # and import it here
     ];
 }
