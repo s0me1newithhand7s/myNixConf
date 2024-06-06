@@ -3,7 +3,8 @@
 {
     environment = {
         systemPackages = with pkgs; [               # system-wide packages
-        
+            # a good start is 'home-manager' package.
+            # check flake.nix on home-manager module in outputs!
         ];
         shellAliases = {                            # global aliases
             
