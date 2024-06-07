@@ -15,7 +15,7 @@
             # package with pkgs; = [ ... ]
         };
         openssh = {                                  # openssh options
-            enable = false;                          # toggle for enabling openssh 
+            enable = true;                          # toggle for enabling openssh 
             allowSFTP = true;                        # toggle for enabling SFTP  
         };
         xserver = {                                  # xserver options
