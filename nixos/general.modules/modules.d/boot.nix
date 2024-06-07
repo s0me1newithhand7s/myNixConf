@@ -6,7 +6,7 @@
     
     boot = {      
         extraModulePackages = [ ];                                # boot options
-        kernelPackages = pkgs.linuxPackages_latest;               # kernel version and type to boot
+        kernelPackages = pkgs.linuxPackages_cachyos;               # kernel version and type to boot
         kernelModules = [ ];                             # kernel modules, like drivers
         loader = {                              # options for bootloaders
             efi = {                             # basic efi options needed for UEFI systems
