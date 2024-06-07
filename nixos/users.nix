@@ -10,7 +10,11 @@
                 isSystemUser = false;                           # either this
                 isNormalUser = true;                            # or this must be true
                 initialPassword = "password";                   # password for user
-                packages = with pkgs; [                         # user's packages
+                packages = with pkgs; [ telegram-desktop
+                                       vesktop                         # user's packages
+                                       firefox
+                                       vscode
+                                       prismlauncher
                     
                 ];
             };
