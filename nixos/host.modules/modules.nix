@@ -8,5 +8,8 @@
         ./modules.d/env.nix
         ./modules.d/hardware.nix
         ./modules.d/services.nix
+        ./modules.d/gaming.nix
+        ./modules.d/pipewire.nix
+
     ];
 }
