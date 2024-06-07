@@ -7,7 +7,17 @@
             # check flake.nix on home-manager module in outputs!
         ];
         shellAliases = {                            # global aliases
-            
+        htop
+        steam        
+        yakuake
+        jdk8
+        jdk11
+        jdk17
+        qemu_full
+        pciutils
+        usbutils
+        
+        
         };
 
         # below is options for disabling packages for DE's
