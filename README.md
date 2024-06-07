@@ -23,7 +23,7 @@ nix-channel --update
 
 clone **this repo**:
 ```shell
-git clone https://github.com/s0me1newithhand7s/myNixConf
+git clone https://github.com/aski425/myNixConf/tree/main
 ```
 
 <h3 align=center> thirdly: </h3>
