@@ -54,7 +54,7 @@
         };
     };
 
-outputs = { self, nixpkgs, chaotic, ... }@inputs:
+outputs = { self, nixpkgs, home-manager, disko, chaotic, ... }@inputs:
     {
         nixosConfigurations = {
             s0me-nix = nixpkgs.lib.nixosSystem {
