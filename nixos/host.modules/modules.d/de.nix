@@ -1,7 +1,7 @@
 {
     services = {
         desktopManager = {
-            plasma6.enable = false;         # toggle for KDE Plasma 6
+            plasma6.enable = true;         # toggle for KDE Plasma 6
         };
         xserver = {
             desktopManager= {
