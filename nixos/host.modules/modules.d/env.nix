@@ -7,15 +7,21 @@
             # check flake.nix on home-manager module in outputs!
         ];
         shellAliases = {                            # global aliases
+        usbutils
+        pciutils
+        qemu_full
+        wineWowPackages.stableFull
+        mako
+        wl-clipboard
+        bottles
         htop
-        steam        
+        steam
         yakuake
         jdk8
         jdk11
         jdk17
-        qemu_full
-        pciutils
-        usbutils
+        qbittorrent
+
         
         
         };
