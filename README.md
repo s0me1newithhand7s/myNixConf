@@ -1,7 +1,8 @@
 <h1 align=center>myNixConf :snowflake:</h1>
 <h4 align=center>my ultimate nixos configuration (my main config xd)!! </h4>
 
-![240601_14-35-1717241711](https://github.com/s0me1newithhand7s/myNixConf/assets/117505144/927d9923-84f7-48b8-811b-4f85bb31fe9b)
+![240607_23-18-1717791504](https://github.com/s0me1newithhand7s/myNixConf/assets/117505144/5103c32b-f485-4949-bdf7-0f353a01edc6)
+
 
 <hr/>
 <br>
