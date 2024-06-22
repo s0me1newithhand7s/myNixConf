@@ -3,8 +3,8 @@
 {
     fileSystems = {
         "/" = { 
-            device = "/dev/disk/by-label/nixos";
-            # fsType = " ";       # <= here i reccomend to choose either ext4 or f2fs
+            device = "/dev/disk/by-label/root";
+            # fsType = " ";
         };
 
         "/boot" = {
