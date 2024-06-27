@@ -26,7 +26,7 @@
                 # theme = ;                      # GRUB theme, if default is not suitable for you
                 # users = { ... };               # option for hashed password thing
             };
-            systemd-boot = {                    # systemd-boot options, see https://nixos.wiki/wiki/Bootloader for more
+            systemd-boot = {                    # systemd-boot options, see https://wiki.nixos.org/wiki/Bootloader for more
 		configurationLimit = 5;         # limits of generation
                 enable = true;                  # toggle for enabling systemd-boot
                 memtest86 = {                   # options for memtest86 or https://www.memtest86.com/
