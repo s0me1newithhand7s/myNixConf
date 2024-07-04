@@ -1,3 +1,15 @@
+# About flakes by hand7s
+# flakes is core of nixos and nix
+# flakes contains inputs with links
+# and outputs with args, modules
+# with flakes you can declare everything
+# basically, you can have all your nixos inside flake.nix
+# in my flake.nix you can find links to great flakes, like:
+# nixgl - helps with OpenGL apps nix outside of nixos
+# nix-darwin - nixpkgs for darwin (mac)
+# chaotic-nyx - chaotic-aur for nix
+# more info you can find in flake urls itself!
+
 {
     description = "actually, stock but good reference flake xd";
     
