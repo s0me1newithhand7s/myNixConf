@@ -9,7 +9,7 @@
 {
     disko = {
         devices = {
-            nix-disk = {
+            root-disk = {
                 device = "/dev/X";
                 type = "disk";
                 content = {
@@ -18,20 +18,25 @@
                         ESP = {
                             type = "EF00";
                             size = "1G";
+                            name = "boot";
                             content = { 
                                 type = "filesystem";
                                 format = "vfat";
                                 mountpoint = "/boot";
                             };
                         };
+                        # luks = { };                     # https://github.com/nix-community/disko/blob/master/example/luks-interactive-login.nix
                         root = {
                             size = "98%";
                             content = {
                                 type = "filesystem";
+                                name = "root";
                                 # format = " ";
                                 mountpoint = "/";
                             };
                         };
+                        # encryptedSwap = { }
+                        # plainSwap = { }                 # https://github.com/nix-community/disko/blob/master/example/swap.nix
                     };
                 };
             };
