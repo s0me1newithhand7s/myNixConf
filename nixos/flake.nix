@@ -18,17 +18,10 @@
             url = "github:nixos/nixpkgs/nixos-unstable";
         };
 
+        # nixpkgs-stabele = { }
+
         nixpkgs-master = {
             url = "github:nixos/nixpkgs/master";
-        };
-
-        nix-gaming = {
-            url = "github:fufexan/nix-gaming";
-        };
-
-        nix-darwin = {
-            url = "github:LnL7/nix-darwin";
-            inputs.nixpkgs.follows = "nixpkgs";
         };
 
         nixgl = {
@@ -39,8 +32,8 @@
             url = "github:nix-community/NUR";
         };
 
-        agenix = {
-            url = "github:ryantm/agenix";
+        impermanence = {
+            url = "github:nix-community/impermanence";
         };
 
         home-manager = {
@@ -48,13 +41,26 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        disko = {
+            url = "github:nix-community/disko";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        agenix = {
+            url = "github:ryantm/agenix";
+        };
+
         chaotic = {
             url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
         };
 
-        disko = {
-            url = "github:nix-community/disko";
+        nix-darwin = {
+            url = "github:LnL7/nix-darwin";
             inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        nix-gaming = {
+            url = "github:fufexan/nix-gaming";
         };
 
         sops-nix = {
@@ -76,7 +82,7 @@ outputs = { self, nixpkgs, chaotic, ... }@inputs:
         };
         darwin-configuration = {
             s0me-nix = nix-darwin.lib.darwinSystem {
-                modules = [ ./configuration.nix ];
+                modules = [  ];
             };
         };
     };
