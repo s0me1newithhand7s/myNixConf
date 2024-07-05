@@ -72,12 +72,14 @@
         };
     };
 
-outputs = { self, nixpkgs, chaotic, ... }@inputs:
+outputs = { self, ... }@inputs:
     {
         nixosConfigurations = {
             s0me-nix = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
-                modules = [  ];
+                modules = [  
+                    ./configuration.nix
+                ];                    
             };
         };
         darwin-configuration = {
