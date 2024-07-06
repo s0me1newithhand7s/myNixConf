@@ -2,6 +2,6 @@
 
 {
     imports = [
-        ./host.modules/modules.nix
+        ./modules.nix
     ];
 }
