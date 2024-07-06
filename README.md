@@ -1,114 +1,85 @@
-<h1 align=center>myNixConf :snowflake:</h1>
-<h4 align=center>my ultimate nixos configuration (my main config xd)!! </h4>
+<h1 align=center>myNixConf. ❄️</h1>
 
-![240607_23-18-1717791504](https://github.com/s0me1newithhand7s/myNixConf/assets/117505144/5103c32b-f485-4949-bdf7-0f353a01edc6)
+![240706_12-42-1720258920](https://github.com/s0me1newithhand7s/myNixConf/assets/117505144/15ae1a67-5e63-4333-a0ab-c948e63d7d70)
 
 
-<hr/>
-<br>
-<br>
+<h2 align=center>Little about this project. ❄️</h2>
 
-<h1 align=center> How to </h1> 
-<p>Steps to migrate from your previous NixOS configuration to mine.</p>
-<h3 align=center> firstly: </h3>
+> [!NOTE] 
+> NixOS is not like any other Linux distributive. Declarative, Reproducible, Immutable and Atomic - this OS is another whole world, world full of wonders. ✨
 
-add **nix unstable channel** and **home-manager** if you haven't done it yet:
-```shell
-nix-channel --remove nixos
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixos
-nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-nix-channel --update
-```
-<h3 align=center> secondly: </h3>
+* I've started using NixOS from January of 2024, and since then I've had itch to make something usefull for Nix community and NixOS in general. After 3 months I've came to idea of creating somehow not-private but yet usable NixOS configuration, that will be **more readable** and **easier to understand** for noobs (or newbiets xd).
+* With this I've started dive into Nix, read more and more, find wonderful peoples inside this awesome community, learn more from them and with them. I've bringed few new users, I've helped some newbiets, and I proud of myself.
+* But we don't end here! I'm polishing my configuration as much as I can, and hope that it's will help **you** start your journey in NixOS ❄️.
 
-clone **this repo**:
-```shell
-git clone https://github.com/s0me1newithhand7s/myNixConf
-```
 
-<h3 align=center> thirdly: </h3>
+<h2 align=center>Installation of this project. ❄️</h2>
 
-at this point in your `/etc/nixos` you'll have `configuration.nix` and `harware-configuration.nix`. **backup it**.
-```shell
-mkdir /etc/nixbackup/
-cp /etc/nixos/* /etc/nixbackup
-```
+> [!WARNING]
+> This is **NixOS** only repository and does not suitable for non-NixOS systems with Nix package manager, even tho `flake.nix` have `nixGL` and `nix-darwin`!
+> In case you'll need **only** flake, home-manager stuff, or disko - `wget` / `curl` it!
 
-<h3 align=center> fourthly: </h3>
+### There is 2 ways:
 
-now we rollin':
-```shell
-cd ~/myNixConf/nixos
-```
-for beggining you can edit `home.nix` and `users.nix` for creating *your* user. also don't forget to edit `password` option!
-after this you can edit `host.modules/modules.d/networking.nix` and `flake.nix` to provide *your* hostname. 
-now, open your previous `harware-configuration.nix`, if you forget, we store it in `/etc/nixbackup`, and use it as reference for `general.modules/modules.d/boot.nix`, `general.modules/modules.d/nixpkgs.nix`, `general.modules/modules.d/disks.nix` and `host.modules/modules.d/networking.nix`.
-edit `host.modules/modules.d/dm.nix` and `wm.nix` or `de.nix` in same directory.
-and you can add `*.nix`, with *your* services, like Steam, pipewire/pulseaudio and etc! just don't forget to globe them correcrtly in `host.modules/modules.nix`!
+<details><summary>With 1st installation:</summary>
 
-<h3 align=center> fifthly: </h3>
+   1. Enter `nix-shell` with your desire text editor and git.
+   2. Clone this repo!
+   3. `cd` into repo directory.
+   4. Edit `disko.nix`, more about disko [here](https://github.com/nix-community/disko). 🪩
+   5. Run `nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko disk.nix` to partition your disks!
+   6. Mount disks, I hope this isn't hard part for you.
+   7. Now `nixos-generate-config --root /mnt`
+   8. Open new terminal / tty session or use tmux, you'll need to copy some info from `hw-conf.nix` that nixos generates.
+   9. Paste 'em inside new configuration's modules.
+   10. Configure existing modules according to your needs.
+   11. Add new modulse in case you'll find them necessary.
+   12. Edit `flake.nix`, `home.nix` and delete `disko.nix`, with unused modules.
+   13. Triple-check everything.
+   14. And now we roll! Remove **files** inside generated `/mnt/etc/nixos`, not the directory itself.
+   15. Move new configuration inside `/mnt/etc/nixos`.
+   16. And you did it! After `nixos-install --flake /mnt/etc/nixos/.#hostname` and debugging some rookie mistakes you'll find youself with fresh shiny NixOS ❄️! 
 
-now we copy actual config:
-```shell
-rm /etc/nixos/*
-cp -r ~/myNixConf/nixos/* /etc/nixos
-```
- 
-<h3 align=center> sixthly: </h3>
+</details>
 
-we will check and correct all the mistakes, if there any of 'em:
-```shell
-nixos-rebuild dry-activate --flake /etc/nixos/.#hostname 
-nixos-rebuild test --flake /etc/nixos/.#hostname
-```
-if there is anything wrong:
+<details><summary>..or you can migrate from existing NixOS configuration:</summary>
 
-[Actual Wiki](https://wiki.nixos.org/) 
+   1. Enter `nix-shell` with your desire text editor and git.
+   2. Clone this repo!
+   3. `cd` into repo directory.
+   5. Open new terminal, we need to copy your existing configuration from `/etc/nixos`.
+   6. But before transition, **backup** existing configuration, `mkdir /etc/nixbackup` and `cp -r /etc/nixos /etc/nixbackup`.
+   7. Open your existing configuration.
+   8. Paste needed options inside new configuration's modules.
+   9. Configure existing modules according to your needs.
+   10. Add new modulse in case you'll find them necessary.
+   11. Edit `flake.nix`, `home.nix` and delete `disko.nix`, with unused modules.
+   12. Triple-check everything.
+   13. Delete existing files insode `/etc/nixos`.
+   14. Move new configuration inside `/etc/nixos`.
+   15. Use `nixos-rebuild test --flake /etc/nixos/.#` for debbugging!
+   16. After that - `nixos-rebuild boot --flake /etc/nixos/.# --upgrade-all` and reboot into your new NixOS ❄️!
 
-[MyNixOS, for options](https://mynixos.com/)
+</details>
 
-[NixOS search, also options](https://search.nixos.org/)
-
-.. and if everything is good:
-
-<h3 align=center> finally: </h3>
-
-we build:
-```shell
-nixos-rebuild switch --upgrade-all --flake /etc/nixos/.#hostname
-```
-after this i STRONGLY recommend you to reboot.
-
-<hr/>
-<br>
 <br>
 
-# In case of errors / bugs / errors
-## Openning Issue
-how2:
-1. **Your version of config, detailed.**;
-2. **Your hardware.** i don't mind how, feel free to provide creative ways xD;
-3. **Your edits in configs.** provide us (to me xd) what exactly you have edited and how.
-4. **Error**. need to explain?
-## Fixing
-in case you have fixed your error please - help others. i hope you will understand.
-and please don't just open issue and disappears. xd
-### P.S
- * i will ingore **ANY** issue what won't be properly created (from now, even mine).
+<h2 align=center>Usefull links. ❄️</h2>
 
-<hr/>
-<br>
+[Actual Wiki](https://wiki.nixos.org/), as nixos.wiki is now deparced.
+
+[MyNixOS](https://mynixos.com/) and [NixOS Search](https://search.nixos.org/) basically same, but inside MyNixOS exist options like `home-manger`.
+
+[Community page](https://nixos.org/community/). REALLY nice ppls exist there.
+
 <br>
 
-# Offtop or QnA
-### Why did you put everything in `nixos` folder?
- - imho, this way you wont harm your `configuration.nix` while you editing mine. also this way i'm kinda preventing you from not backing up your working config.
-### Is there any point of this whole project existing?
- - yes, and main one - to make my life easier. i have [multiple devices](https://pastebin.com/raw/kRSBxh3W) laying around, and much more PCs in my colledge. and writing `configuration.nix` every time i have need it is pain in butt. also, by creating this project, i've done my first big project with bugtracking, fixes and etc. this was my goal on 2024, so i hope i will work with this later on. xd
-### Is it created for **FULL Reproducibility**?
- - no. i have no need in full reproducibility, bc most of my cases (right now) is create a machine that will work no matter what OS will be on it. with nixos i can achieve it with ease.
-### Reasosns of `disko.nix` existing?
- - in case you'll use it as your first and only nixos config you can just edit `disko.nix` and run `nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko myNixConf/nixos/disko.nix` to automize partiotioning.
-### I want to help you, but don't know how!
- - it's awesome! if you have any ideas how to improve (and not ruin my goals, read whole offtop again pls) this project - message me in matrix / discord / telegram! links in my bio.
+<h2>Special thanks to..</h2>
 
+[TheMaxMur](https://github.com/themaxmur). This is funny how I bringed him in NixOS, and he became nixpkgs contributor, created actually [good config](https://github.com/TheMaxMur/NixOS-Configuration). And he helps me alot, not only with NixOS config.
+
+[Askhat](https://github.com/aski425). Dude still listen to my schizo rave and tests my crazy ideas. Even forked me. XD
+
+[Kotudemo](https://github.com/kotudemo). He's like "i ain't do this" and creating own way. Also he's tested my first attemps, and now kotu is owning he's own repo with he's own config. And I'm helping him. :D
+
+.. and to **you**. If you use my NixOS config - that means that I've spent time not in vain. You can fork it and gimme a **star** ⭐ in case you find yourself grateful.
