@@ -87,7 +87,7 @@ outputs = { self, ... }@inputs:
                 system = "x86_64-linux";
                 modules = [  
                     ./configuration.nix                     # path to your nixos configuration.nix a
-                    # here you place modules for flakes inputsm lika chaotic or stylix
+                    # here you place modules for flakes inputs like a chaotic or stylix
                 ];                    
             };
         };
