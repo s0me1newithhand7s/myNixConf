@@ -1,4 +1,5 @@
-{ 
+{
+    lib,
     ... 
 }: {
     hardware = {             
@@ -7,5 +8,6 @@
             enable32Bit = true;
             ensureHeadlessSoftwareOpenGL = false;
         };
+	enableRedistributableFirmware = lib.mkDefault true;
     };
 }
