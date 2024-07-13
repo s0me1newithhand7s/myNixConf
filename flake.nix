@@ -80,20 +80,36 @@
         ### ^^^ other flakes, good and usable 
     };
 
-outputs = { self, ... }@inputs:
+outputs = { 
+    self, 
+    ... 
+}@inputs:
     {
         nixosConfigurations = {
-            s0me-nix = nixpkgs.lib.nixosSystem {            # nixpkgs option goes here
+            s0me-nix = nixpkgs.lib.nixosSystem {                         # nixpkgs option goes here
                 system = "x86_64-linux";
                 modules = [  
-                    ./configuration.nix                     # path to your nixos configuration.nix a
+                    ./configuration.nix                     # path to your nixos configuration.nix
                     # here you place modules for flakes inputs like a chaotic or stylix
                 ];                    
             };
         };
+
+        homeConfigurations = {
+            nixuser = home-manager.lib.homeManagerConfiguration {        # hm option goes here
+                pkgs = nixpkgs.legacyPackages.x86_64-linux;
+                modules = [
+                    ./home.nix                            # path to your home-manager configuration.nix
+                     # here you place modules for flakes inputs like a chaotic or stylix
+                ];
+            };
+        };
+    
         darwin-configuration = {
-            s0me-nix = nix-darwin.lib.darwinSystem {        # nix-darwin goes here
-                modules = [  ];
+            s0me-nix = nix-darwin.lib.darwinSystem {                    # nix-darwin goes here
+                modules = [ 
+                    # here you place modules for flakes inputs
+                ];
             };
         };
     };
