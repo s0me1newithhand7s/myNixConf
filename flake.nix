@@ -81,7 +81,10 @@
     };
 
 outputs = { 
-    self, 
+    self,
+    nixpkgs,
+    home-manager,
+    # nix-darwin,                                                        # activate it in case you need nix-darwin (macOS)
     ... 
 }@inputs:
     {
@@ -105,12 +108,12 @@ outputs = {
             };
         };
     
-        darwin-configuration = {
-            s0me-nix = nix-darwin.lib.darwinSystem {                    # nix-darwin goes here
-                modules = [ 
-                    # here you place modules for flakes inputs
-                ];
-            };
-        };
+        # darwin-configuration = {
+        #     s0me-nix = nix-darwin.lib.darwinSystem {                    # nix-darwin goes here
+        #         modules = [ 
+        #             # here you place modules for flakes inputs
+        #         ];
+        #     };
+        # };
     };
 }
