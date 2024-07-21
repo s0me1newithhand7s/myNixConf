@@ -15,7 +15,6 @@
                     package = with pkgs; [ driversi686Linux.amdvlk ];
                 };
                 supportExperimental.enable = false;
-                legacySupport.enable = false;
                 opencl.enable = false;
             };
         };
