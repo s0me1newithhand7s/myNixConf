@@ -1,10 +1,10 @@
 {
     imports = [
-        ./os/modules.nix
-        ./hardware/modules.nix
-        ./networking/modules.nix
-        ./software/modules.nix
-        ./services/modules.nix
-        ./hardware/modules.nix
+        ./host/os/modules.nix
+        ./host/hardware/modules.nix
+        ./host/networking/modules.nix
+        ./host/software/modules.nix
+        ./host/services/modules.nix
+        ./host/hardware/modules.nix
     ];
 }
