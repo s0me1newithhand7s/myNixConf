@@ -34,9 +34,6 @@
                 };
                 sync.enable = false;
             };
-            nvidiaOptimus = {
-                disable = false;
-            };
         };
     };
 }
