@@ -15,7 +15,7 @@
             hostName = config.networking.hostName;
             enable = true;                          
             nssmdns4 = false;
-            nssmdns4 = false;
+            nssmdns6 = false;
             ipv4 = true;
             ipv6 = false;
             openFirewall = false;
