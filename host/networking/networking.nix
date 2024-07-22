@@ -4,7 +4,7 @@
     networking = {                              # networking options
         # bonds = ;
         # bridges = ;
-        hostName = "s0me-nix";                  # hostname for ur PC
+        hostName = "nixos";                  # hostname for ur PC
         # hostId = "";                          # for ZFS?
         timeServers = [                         # https://wiki.nixos.org/wiki/NTP   
             "0.nixos.pool.ntp.org"
