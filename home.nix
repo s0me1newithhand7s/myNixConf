@@ -1,28 +1,30 @@
-{ config, pkgs, ...}:
+{
+    pkgs, 
+    ...
+}:
 
 {
-    imports = [  
-        ./hm/modules.nix
+    imports = [
+        ./hm/modules.nix 
     ];
 
     home = {
-        username = "nixusr";
-        homeDirectory = "/home/nixusr";
-        stateVersion = "24.05";
+        username = "nixusr";             # username
+        homeDirectory = "/home/nixusr";  # home directory
+        stateVersion = "24.05";          
         shellAliases = {
-
-            ncg = "nix store gc -v";
             f = "fastfetch";
         };
 
         packages = with pkgs; [
-            # feel free to add here
+            fastfetch
+            # feel free to add more here
         ];
 
         keyboard = {
-            layout = "us, ru";
-            options = "grp:caps_toggle";
-            variant = "qwerty";
+            layout = "us, ru";           # us and ru layouts
+            options = "grp:caps_toggle"; # caps to change it
+            variant = "qwerty";          # keyboard layout
         };
     };
 }
