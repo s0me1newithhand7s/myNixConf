@@ -6,8 +6,8 @@
     ];
 
     home = {
-        username = "hand7s";
-        homeDirectory = "/home/hand7s";
+        username = "nixusr";
+        homeDirectory = "/home/nixusr";
         stateVersion = "24.05";
         shellAliases = {
 
