@@ -55,7 +55,7 @@
    10. Add new modulse in case you'll find them necessary.
    11. Edit `flake.nix`, `home.nix` and delete `disko.nix`, with unused modules.
    12. Triple-check everything.
-   13. Delete existing files insode `/etc/nixos`.
+   13. Delete existing files inside `/etc/nixos`.
    14. Move new configuration inside `/etc/nixos`.
    15. Use `nixos-rebuild test --flake /etc/nixos/.#` for debbugging!
    16. After that - `nixos-rebuild boot --flake /etc/nixos/.# --upgrade-all` and reboot into your new NixOS ❄️!
