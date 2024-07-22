@@ -89,7 +89,7 @@ outputs = {
 }@inputs:
     {
         nixosConfigurations = {
-            s0me-nix = nixpkgs.lib.nixosSystem {                         # nixpkgs option goes here
+            nixos = nixpkgs.lib.nixosSystem {                         # nixpkgs option goes here
                 system = "x86_64-linux";
                 modules = [  
                     ./configuration.nix                     # path to your nixos configuration.nix
