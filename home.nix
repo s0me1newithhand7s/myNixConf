@@ -1,9 +1,7 @@
 {
     pkgs, 
     ...
-}:
-
-{
+}: {
     imports = [
         ./hm/modules.nix 
     ];
