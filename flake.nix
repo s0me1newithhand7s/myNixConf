@@ -18,15 +18,23 @@
             url = "github:nixos/nixpkgs/nixos-unstable";
         };
 
-        # nixpkgs-stable = { 
-        #    url = "github:nixos/nixpkgs/nixos-24.05";
-        # }
+        nixpkgs-small = { 
+            url = "github:nixos/nixpkgs/nixos-unstable-small";
+        };
+
+        nixpkgs-stable-small = { 
+           url = "github:nixos/nixpkgs/nixos-24.05-small";
+        };
+
+        nixpkgs-stable = { 
+           url = "github:nixos/nixpkgs/nixos-24.05";
+        };
 
         nixpkgs-master = {
             url = "github:nixos/nixpkgs/master";
         };
 
-        ### ^^^ you can basically rename -master / -stable to just nixpkgs in case you need only one of 'em
+        ### ^^^ you can basically rename -master / -stable / -small to just nixpkgs in case you need only one of 'em
 
         nixgl = {
             url = "github:nix-community/nixGL";
@@ -50,6 +58,16 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        nixos-generators = {
+            url = "github:nix-community/nixos-generators";
+        };
+
+        plasma-manager = {
+            url = "github:nix-community/plasma-manager/";
+            inputs.nixpkgs.follows = "nixpkgs";
+            inputs.home-manager.follows = "home-manager";
+        };
+
         ### ^^^ nix-community flakes the best, i strongly recommend to use hm and disko :D
 
         agenix = {
@@ -63,10 +81,6 @@
         nix-darwin = {
             url = "github:LnL7/nix-darwin";
             inputs.nixpkgs.follows = "nixpkgs";
-        };
-
-        nix-gaming = {
-            url = "github:fufexan/nix-gaming";
         };
 
         sops-nix = {
