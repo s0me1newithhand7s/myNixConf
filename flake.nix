@@ -34,7 +34,7 @@
             url = "github:nixos/nixpkgs/master";
         };
 
-        ### ^^^ you can basically rename -master / -stable / -small to just nixpkgs in case you need only one of 'em
+        # ^^^ you can basically rename -master / -stable / -small to just nixpkgs in case you need only one of 'em
 
         nixgl = {
             url = "github:nix-community/nixGL";
@@ -69,7 +69,7 @@
             inputs.home-manager.follows = "home-manager";
         };
 
-        ### ^^^ nix-community flakes the best, i strongly recommend to use hm and disko :D
+        # ^^^ nix-community flakes that i found usable
 
         agenix = {
             url = "github:ryantm/agenix";
@@ -80,7 +80,7 @@
         };
 
         chaotic-master = {
-             url = "github:chaotic-cx/nyx/main";
+            url = "github:chaotic-cx/nyx/main";
         };
 
         nix-darwin = {
@@ -95,44 +95,49 @@
         stylix = {
             url = "github:danth/stylix";
         };
-
-        ### ^^^ other flakes, good and usable 
     };
 
 outputs = { 
     self,
     nixpkgs,
     home-manager,
-    # nix-darwin,                                                        # activate it in case you need nix-darwin (macOS)
+    nix-darwin,
     ... 
-}@inputs:
+} @ inputs:
     {
         nixosConfigurations = {
             nixos = nixpkgs.lib.nixosSystem {                         # nixpkgs option goes here
                 system = "x86_64-linux";
                 modules = [  
-                    ./modules.nix                     # path to your nixos *.nix with nixos configuration
+                    ./nixos/modules.nix                     # path to your nixos *.nix with nixos configuration, inside your new host directory
                     # here you place modules for flakes inputs like a chaotic or stylix
                 ];                    
             };
         };
 
         homeConfigurations = {
-            nixuser = home-manager.lib.homeManagerConfiguration {        # hm option goes here
+            nixuser = home-manager.lib.homeManagerConfiguration {        # hm option goes here, inside your new host directory
                 pkgs = nixpkgs.legacyPackages.x86_64-linux;
                 modules = [
-                    ./home.nix                            # path to your home-manager configuration.nix
-                     # here you place modules for flakes inputs like a chaotic or stylix
+                    ./nixusr/home.nix                              # path to your home-manager configuration, standalone version
+                    # here you place modules for flakes inputs like a chaotic or stylix
                 ];
             };
         };
     
-        # darwin-configuration = {
-        #     s0me-nix = nix-darwin.lib.darwinSystem {                    # nix-darwin goes here
-        #         modules = [ 
-        #             # here you place modules for flakes inputs
-        #         ];
-        #     };
-        # };
+        darwin-configuration = {
+            nix-darwin = nix-darwin.lib.darwinSystem {                    # nix-darwin goes here
+                modules = [ 
+                    ./nix-darwin/modules.nix                            # path to your nix-darwin configuration
+                    # here you place modules for flakes inputs
+                ];
+            };
+        };
     };
+
+    # about inputs:
+    # you can add as much as you need inputs, 
+    # like new hosts, home-manager and nix-darwin 
+    # AND nixos itself. in case you need new..
+    # just use existing options as template! 
 }
