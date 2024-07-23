@@ -22,12 +22,12 @@
             url = "github:nixos/nixpkgs/nixos-unstable-small";
         };
 
-        nixpkgs-stable-small = { 
-           url = "github:nixos/nixpkgs/nixos-24.05-small";
-        };
-
         nixpkgs-stable = { 
            url = "github:nixos/nixpkgs/nixos-24.05";
+        };
+
+        nixpkgs-stable-small = { 
+           url = "github:nixos/nixpkgs/nixos-24.05-small";
         };
 
         nixpkgs-master = {
