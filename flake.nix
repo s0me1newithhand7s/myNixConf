@@ -111,7 +111,7 @@ outputs = {
             nixos = nixpkgs.lib.nixosSystem {                         # nixpkgs option goes here
                 system = "x86_64-linux";
                 modules = [  
-                    ./configuration.nix                     # path to your nixos configuration.nix
+                    ./modules.nix                     # path to your nixos *.nix with nixos configuration
                     # here you place modules for flakes inputs like a chaotic or stylix
                 ];                    
             };
