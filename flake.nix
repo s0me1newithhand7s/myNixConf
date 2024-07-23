@@ -79,6 +79,10 @@
             url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
         };
 
+        chaotic-master = {
+             url = "github:chaotic-cx/nyx/main";
+        };
+
         nix-darwin = {
             url = "github:LnL7/nix-darwin";
             inputs.nixpkgs.follows = "nixpkgs";
