@@ -66,7 +66,7 @@
 
 <h2 align=center>Usefull links. ❄️</h2>
 
-[Actual Wiki](https://wiki.nixos.org/), as nixos.wiki is now deparced.
+[Actual Wiki](https://wiki.nixos.org/), as nixos.wiki is now outdated.
 
 [MyNixOS](https://mynixos.com/) and [NixOS Search](https://search.nixos.org/) basically same, but inside MyNixOS exist options like `home-manger`.
 
