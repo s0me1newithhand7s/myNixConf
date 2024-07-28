@@ -2,14 +2,14 @@
     ...
 }: {
     networking = {
-        proxy = {                             # proxy things
-            allProxy = ;
-            default = ;
-            ftpProxy = ;
-            httpProxy = ;
-            httpsProxy = ;
-            noProxy = ;
-            rsyncProxy = ;
+        proxy = {                             # proxy 
+            # allProxy = ;
+            # default = ;
+            # ftpProxy = ;
+            # httpProxy = ;
+            # httpsProxy = ;
+            # noProxy = ;
+            # rsyncProxy = ;
         };
     };
 }
