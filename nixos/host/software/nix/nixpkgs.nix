@@ -1,6 +1,6 @@
-{ config, pkgs, ... }:
-
-{
+{ 
+    ... 
+}: {
     nixpkgs = {                             # nixpkgs options
         config = { 
             allowUnfree = true;             # allows unfree pkgs

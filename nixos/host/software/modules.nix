@@ -1,11 +1,10 @@
 {
     disabledModules = [
-        "./programs/steam.nix"
+        "./programs/nh.nix"
     ];
     imports = [
         ./nix/nix.nix
         ./nix/nixpkgs.nix
-        ./programs/steam.nix
         ./programs/nh.nix
     ];
 }
