@@ -124,15 +124,6 @@ outputs = {
                 ];
             };
         };
-    
-        darwin-configuration = {
-            nix-darwin = nix-darwin.lib.darwinSystem {                    # nix-darwin goes here
-                modules = [ 
-                    ./nix-darwin/modules.nix                            # path to your nix-darwin configuration
-                    # here you place modules for flakes inputs
-                ];
-            };
-        };
     };
 
     # about inputs:
