@@ -10,10 +10,10 @@
     disko = {
         devices = {
             root-disk = {
-                device = "/dev/X";
+                device = "/dev/disk/by-diskeq/1";
                 type = "disk";
                 content = {
-                    type = "GPT";
+                    type = "gpt";
                     partitions = { 
                         ESP = {
                             type = "EF00";
@@ -27,7 +27,7 @@
                         };
                         # luks = { };                     # https://github.com/nix-community/disko/blob/master/example/luks-interactive-login.nix
                         root = {
-                            size = "98%";
+                            size = "100%";
                             content = {
                                 type = "filesystem";
                                 name = "root";
